@@ -16,6 +16,9 @@ dioxus-html = { version = "0.6.0-alpha.5", features = ["serialize"]}
 
 serde = "1.0.215"
 dioxus-sdk = {git = "https://github.com/DioxusLabs/sdk", branch = "feat/dioxus-0.6", features = ["timing"]}
+reqwest = {version = "0.12.9", features = ["json"]}
+rand = {version="0.8.5"}
+getrandom = { version = "0.2.15", features = ["js"] }
 
 [features]
 web = ["dioxus/web"]
