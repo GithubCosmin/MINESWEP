@@ -35,16 +35,25 @@ fn Square(x:i32, y:i32, color: String, text: String, is_bomb: bool) -> Element {
   font-size: 180%;
             ",
             {if is_bomb {
-                rsx! {
-                    img {
-                        src: "/assets/bmb.png", style: "height:100%; width: 100%",
-                    }
+                rsx!{
+                    Bomb {}
                 }
             } else {
                 rsx! {
                     "{text}"
                 }
             }}
+        }
+    }
+}
+
+#[component]
+fn Bomb() -> Element {
+    let mut img_src = use_signal(|| "/assets/bmb.png");    
+    rsx! {
+        img {
+            src: "{img_src}", style: "height:100%; width: 100%",
+            onclick: move |_| {img_src.set("/assets/bmb2.png")}
         }
     }
 }
